@@ -4,16 +4,20 @@ import logo from '../../assets/logo.png'
 import FeatherIcon from 'feather-icons-react';
 import { FiFacebook, FiPhoneCall, FiAtSign, FiInstagram, FiTwitter, FiYoutube, FiLinkedin, FiMail, FiMessageSquare } from 'react-icons/fi'
 import { AiOutlineWhatsApp } from 'react-icons/ai';
+
+
 export function Footer() {
   const [email, setEmail] = useState('');
 
   function handleSubmit(key, values) {
-    localStorage.setItem(key, values)
-  }
+    if (!values) {
+      return alert('Preencha o campo de email.')
+    }
 
-  //localStorage.setItem("email" , "danilomds2007@gmail.com" );
-  //localStorage.getItem("email");
-  //localStorage.removeItem("email")
+    localStorage.setItem(key, values);
+    alert('E-mail cadastrado com sucesso!');
+    setEmail('')
+  }
 
   return (
     <Main>
@@ -30,8 +34,8 @@ export function Footer() {
           <FiMail className="mail" />
         </MailWrap>
         <Text>
-
-          CADASTRE-SE EM NOSSA NEWSLETTER <br />para não perder nossas promoções!
+          CADASTRE-SE EM NOSSA NEWSLETTER <br />
+          para não perder nossas promoções!
         </Text>
         <Wrap2 />
         <Email
@@ -39,10 +43,12 @@ export function Footer() {
           placeholder="  Digite seu melhor e-mail"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
+          required
         />
         <button onClick={() => handleSubmit('ls_email', email)}>
           <FeatherIcon icon="arrow-right" />
         </button>
+
       </Container>
       <Container2>
         <FiMessageSquare />
