@@ -7,6 +7,14 @@ export const Main = styled.div`
   background: #2a95d7;
   width: 100%;
   height: 6rem;
+
+  @media (max-width: 700px) {
+      .Main {
+        width: 100%;
+      }
+
+      
+  } 
 `;
 
 export const Logo = styled.img`
@@ -24,8 +32,15 @@ export const Search = styled.input`
   font-size: 1rem;
 `;
 
-export const RighttWrap = styled.div`
+export const Wrap = styled.div`
   display: flex;
+  align-items: center;
+
+  .user-icon {
+    font-size: 2rem;
+    color: #fabe11;
+  }
+  
 `;
 
 export const User = styled.div`
@@ -33,6 +48,14 @@ export const User = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
+  color: #fff;
+  cursor: pointer;
+  margin: .5rem;
+
+  &&:hover {
+    transition: all .2s;
+    color: #fabe11;
+  }
 `;
 
 export const Cart = styled.div`
@@ -43,10 +66,12 @@ export const Cart = styled.div`
   width: 2rem;
   height: 2rem;
   font-size: 1.2rem;
-  background: #fabe11;
+  background: #f9d016;
   border-radius: 50%;
 `;
 
 //#2a95d7
+
+//#f9d016;
 
 //#fabe11
