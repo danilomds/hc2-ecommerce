@@ -5,17 +5,33 @@ import FeatherIcon from 'feather-icons-react';
 import { FiFacebook, FiPhoneCall, FiAtSign, FiInstagram, FiTwitter, FiYoutube, FiLinkedin, FiMail, FiMessageSquare } from 'react-icons/fi'
 import { AiOutlineWhatsApp } from 'react-icons/ai';
 
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 export function Footer() {
   const [email, setEmail] = useState('');
+  
+  function emailRequired() {
+    toast.warn('Preencha o campo de email.', {position: toast.POSITION.TOP_RIGHT});  
+
+  }
+
+  function SentWithSuccess() {
+    toast.success('E-mail cadastrado com sucesso!', {position: toast.POSITION.TOP_RIGHT});  
+
+  }
+  
 
   function handleSubmit(key, values) {
+    
     if (!values) {
-      return alert('Preencha o campo de email.')
+      //return alert('Preencha o campo de email.')
+      return (emailRequired());
     }
 
     localStorage.setItem(key, values);
-    alert('E-mail cadastrado com sucesso!');
+    //alert('E-mail cadastrado com sucesso!');
+    SentWithSuccess();
     setEmail('')
   }
 
@@ -45,9 +61,12 @@ export function Footer() {
           onChange={(e) => setEmail(e.target.value)}
           required
         />
+        
         <button onClick={() => handleSubmit('ls_email', email)}>
           <FeatherIcon icon="arrow-right" />
+          
         </button>
+        <ToastContainer />
 
       </Container>
       <Container2>

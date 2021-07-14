@@ -43,19 +43,7 @@ export function Landing() {
             <button>Adicionar ao carrinho</button>
           </Products>
 
-          <Products>
-            <Img src={Cel} alt="celular" />
-            <p className="description">iPhone 12 Blue 128GB </p>
-            <span>R$ 1.200,00</span>
-            <button>Adicionar ao carrinho</button>
-          </Products>
-
-          <Products>
-            <Img src={Cel} alt="celular" />
-            <p className="description">iPhone 12 Blue 128GB </p>
-            <span>R$ 1.200,00</span>
-            <button>Adicionar ao carrinho</button>
-          </Products>
+          
           
 
         </Container>
