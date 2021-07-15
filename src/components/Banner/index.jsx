@@ -20,14 +20,37 @@ export function Banner() {
 
   }
 
+  function InvalidFormat() {
+    toast.error('Formato inválido!', { position: toast.POSITION.TOP_RIGHT });
+
+  }
+
+
+  function ValidateEmail(e) {
+    let regEmail = /^[a-zA-Z0-9.!#$%&'+=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
+    console.log(regEmail.test(e))
+    if (!regEmail.test(e)) {
+      return true;
+    }
+    return false;
+  }
+
+
   function handleSubmit(key, values) {
     if (!values) {
-      return emailRequired()
+      return emailRequired();
     }
-    localStorage.setItem(key, values);
-    SentWithSuccess();
-    setEmail('')
+    if (values) {
+      if (ValidateEmail(values) === true) {
+        InvalidFormat();
+      } else {
+        localStorage.setItem(key, values);
+        SentWithSuccess();
+        setEmail('');
+      }
+    }
   }
+
 
   return (
     <Main>
@@ -57,8 +80,7 @@ export function Banner() {
         </Content>
       </Container>
     </Main>
-
+  
   )
-
 
 }
