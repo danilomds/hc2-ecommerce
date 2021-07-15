@@ -7,14 +7,10 @@ export const Main = styled.div`
   background: #2a95d7;
   width: 100%;
   height: 6rem;
+  flex-wrap: wrap;
 
-  @media (max-width: 700px) {
-      .Main {
-        width: 100%;
-      }
 
-      
-  } 
+  
 `;
 
 export const Logo = styled.img`
@@ -69,6 +65,10 @@ export const Cart = styled.div`
   background: #f9d016;
   border-radius: 50%;
 `;
+
+
+
+
 
 //#2a95d7
 

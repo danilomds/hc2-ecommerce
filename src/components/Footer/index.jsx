@@ -6,31 +6,26 @@ import { FiFacebook, FiPhoneCall, FiAtSign, FiInstagram, FiTwitter, FiYoutube, F
 import { AiOutlineWhatsApp } from 'react-icons/ai';
 
 import { ToastContainer, toast } from 'react-toastify';
-  import 'react-toastify/dist/ReactToastify.css';
+import 'react-toastify/dist/ReactToastify.css';
 
 export function Footer() {
   const [email, setEmail] = useState('');
-  
+
   function emailRequired() {
-    toast.warn('Preencha o campo de email.', {position: toast.POSITION.TOP_RIGHT});  
+    toast.warning('Preencha o campo de email.', { position: toast.POSITION.TOP_RIGHT });
 
   }
 
   function SentWithSuccess() {
-    toast.success('E-mail cadastrado com sucesso!', {position: toast.POSITION.TOP_RIGHT});  
+    toast.success('E-mail cadastrado com sucesso!', { position: toast.POSITION.TOP_RIGHT });
 
   }
-  
 
   function handleSubmit(key, values) {
-    
     if (!values) {
-      //return alert('Preencha o campo de email.')
-      return (emailRequired());
+      return emailRequired()
     }
-
     localStorage.setItem(key, values);
-    //alert('E-mail cadastrado com sucesso!');
     SentWithSuccess();
     setEmail('')
   }
@@ -55,16 +50,16 @@ export function Footer() {
         </Text>
         <Wrap2 />
         <Email
-          type="text"
+          type="email"
           placeholder="  Digite seu melhor e-mail"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
-        
+
         <button onClick={() => handleSubmit('ls_email', email)}>
           <FeatherIcon icon="arrow-right" />
-          
+
         </button>
         <ToastContainer />
 
@@ -91,8 +86,8 @@ export function Footer() {
       </Container3>
 
       <Container4>
-        <p className="obj">Site desenvolvido para o desafio do Hiring Coders 2 - 2021.</p>
-        <p className="des">Desenvolvido com ❤️ por:  Danilo Mendes</p>
+        <p className="obj">Projeto desenvolvido para o desafio do Hiring Coders 2.</p>
+        <p className="des">© 2021 ❤️ Danilo Mendes</p>
       </Container4>
     </Main>
   )

@@ -13,6 +13,7 @@ export function Header() {
         <User>Entrar / Cadastrar</User>
         <Cart>0</Cart>
       </Wrap>
+     
       
       
     </Main>

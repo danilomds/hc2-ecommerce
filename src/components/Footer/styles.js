@@ -4,6 +4,7 @@ export const Main = styled.div`
   display: flex;
   flex-direction: column;  
   width: 100%;
+  flex-wrap: wrap;
 `;
 
 export const Email = styled.input`
