@@ -69,8 +69,8 @@ export function Products() {
 
           <Prod>
             <Img src={Cel} alt="celular" />
-            <p className="description">iPhone 12 Blue 128GB </p>
-            <span>R$ 1.200,00</span>
+            <p className="description">iPhone 12 Azul 256GB </p>
+            <span>R$ 1.499,00</span>
             <button>Adicionar ao carrinho</button>
           </Prod> 
         </Container>
