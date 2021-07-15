@@ -26,8 +26,10 @@ export function Banner() {
   }
 
 
+  //   /^[a-zA-Z0-9.!#$%&'+=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
+  //  /\S+@\S+\.\S+/;
   function ValidateEmail(e) {
-    let regEmail = /^[a-zA-Z0-9.!#$%&'+=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
+    let regEmail = /\S+@\S+\.\S+/;
     console.log(regEmail.test(e))
     if (!regEmail.test(e)) {
       return true;
