@@ -1,21 +1,18 @@
-import { Main, Logo, Search, Wrap, User, Cart } from './styles';
+import * as S  from './styles';
 import logo from '../../assets/logo.png';
 import { BiUserCircle } from 'react-icons/bi';
 
-
 export function Header() {
+ 
   return (
-    <Main>
-      <Logo src={logo} alt="logo" />
-      <Search type="text" placeholder="  Busque aqui o seu produto" />
-      <Wrap>
+    <S.Header>
+      <S.Logo src={logo} alt="logo" />
+      <S.Search type="text" placeholder="  Busque aqui o seu produto" />
+      <S.Wrap>
         <BiUserCircle className="user-icon"/>
-        <User>Entrar / Cadastrar</User>
-        <Cart>0</Cart>
-      </Wrap>
-     
-      
-      
-    </Main>
+        <S.User>Entrar / Cadastrar</S.User>        
+      </S.Wrap>  
+      <S.Cart>0</S.Cart>   
+    </S.Header>
   )
 }

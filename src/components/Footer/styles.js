@@ -1,10 +1,15 @@
 import styled from 'styled-components';
 
-export const Main = styled.div`
+export const Footer = styled.div`
   display: flex;
   flex-direction: column;  
   width: 100%;
   flex-wrap: wrap;
+
+  @media (max-width: 36rem) {    
+    width: 100%;
+    
+    }
 `;
 
 export const Email = styled.input`
@@ -13,6 +18,13 @@ export const Email = styled.input`
   border-radius: .2rem;
   border: none;
   font-size: 1rem;
+
+  @media (max-width: 36rem) {    
+    width: 20rem ;
+    font-size: 1rem;
+    margin-left: -.3rem;
+  }
+
 `;
 
 export const Wrap = styled.div`
@@ -25,10 +37,18 @@ export const Wrap = styled.div`
   color: #fabe11;
   margin: .2rem;
 }
+
+@media (max-width: 36rem) {    
+    display: none;   
+  }
 `;
 
 export const Wrap2 = styled.div`
   width: 1rem;
+  
+  @media (max-width: 36rem) {    
+    display: none;   
+  }
 `;
 export const Text = styled.div`
   display: flex;  
@@ -37,6 +57,11 @@ export const Text = styled.div`
   font-size: 1.2rem;
   color: #fff;
   margin: 1rem;
+
+  @media (max-width: 36rem) {    
+    font-size: 1rem;   
+    margin: .5rem ;
+  }
 
   
 `;
@@ -56,6 +81,7 @@ export const MailWrap = styled.div`
     color: #111111;
     margin: .2rem;
   }
+  
 `;
 
 export const Container = styled.div`
@@ -82,11 +108,31 @@ export const Container = styled.div`
   button:hover {
     filter: brightness(0.9);
   }
+
+  @media (max-width: 36rem) {    
+    flex-direction: column;  
+    
+    button {
+      margin-top: -2.8rem;
+      margin-left: 16rem;
+    }
+
+    ToastContainer {
+      margin-top: 2rem;
+    }
+  }
+
+  
 `;
 
 export const Logo = styled.img`
   width: 11.5rem;
   height: 3.3rem;
+
+  @media (max-width: 43.75rem) {    
+    display: none;
+    
+  }
 `;
 
 
@@ -109,6 +155,13 @@ export const Container2 = styled.div`
       transition: all 0.2s;
     }
 
+    @media (max-width: 36rem) {  
+      flex-direction: column;  
+    a {
+      margin: .5rem
+    }   
+  }
+
 `;
 
 export const Container3 = styled.div`
@@ -129,6 +182,15 @@ export const Container3 = styled.div`
   a:hover {
     color: #fabe11;
   }
+
+  @media (max-width: 36rem) {  
+    height: 2rem;
+      a {
+        display: none;
+      }
+  }
+
+  
 
 `;
 
@@ -154,6 +216,13 @@ export const Container4 = styled.div`
     margin-top: -.3rem;
   }
 
+  @media (max-width: 36rem) { 
+    height: 5rem; 
+    .obj {
+      margin-top: 1.5rem;
+    }
+
+  }
   
 
 `;

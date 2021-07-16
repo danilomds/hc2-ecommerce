@@ -12,22 +12,16 @@ export function Banner() {
 
   function emailRequired() {
     toast.warning('Preencha o campo de email.', { position: toast.POSITION.TOP_RIGHT });
-
   }
 
   function SentWithSuccess() {
     toast.success('E-mail cadastrado com sucesso!', { position: toast.POSITION.TOP_RIGHT });
-
   }
 
   function InvalidFormat() {
     toast.error('Formato inválido!', { position: toast.POSITION.TOP_RIGHT });
-
   }
 
-
-  //   /^[a-zA-Z0-9.!#$%&'+=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)$/;
-  //  /\S+@\S+\.\S+/;
   function ValidateEmail(e) {
     let regEmail = /\S+@\S+\.\S+/;
     console.log(regEmail.test(e))
@@ -37,13 +31,12 @@ export function Banner() {
     return false;
   }
 
-
   function handleSubmit(key, values) {
     if (!values) {
       return emailRequired();
     }
     if (values) {
-      if (ValidateEmail(values) === true) {
+      if (ValidateEmail(values)) {
         InvalidFormat();
       } else {
         localStorage.setItem(key, values);
@@ -52,7 +45,6 @@ export function Banner() {
       }
     }
   }
-
 
   return (
     <Main>
@@ -74,7 +66,6 @@ export function Banner() {
             onChange={(e) => setEmail(e.target.value)}
             required
           />
-
           <button onClick={() => handleSubmit('ls_email', email)}>
             <FeatherIcon icon="arrow-right" />
           </button>
@@ -82,7 +73,5 @@ export function Banner() {
         </Content>
       </Container>
     </Main>
-  
   )
-
 }

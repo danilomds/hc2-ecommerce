@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Main = styled.div`
   display: flex;
   justify-content: center;
-  width: flex;
-  height: 10rem;
+  width: 100%;
+  height: 8rem;
   background: #fabe11;
   flex-wrap: wrap;
   
@@ -19,4 +19,10 @@ export const Main = styled.div`
   a:hover {
     color: #111111;
   }
+
+  @media (max-width: 43.75rem) {    
+      display: none;
+    
+    }
+  
 `;

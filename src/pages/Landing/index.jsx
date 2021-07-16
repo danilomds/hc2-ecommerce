@@ -1,4 +1,3 @@
-//import { Main, Container, Products, Img } from './styles';
 import { Header } from '../../components/Header';
 import { Menu } from '../../components/Menu';
 import { Footer } from '../../components/Footer';
@@ -13,8 +12,7 @@ export function Landing() {
       <Menu />
       <Banner />
       <Products />
-      <Footer />
+      <Footer />    
     </>
-
   )
 }

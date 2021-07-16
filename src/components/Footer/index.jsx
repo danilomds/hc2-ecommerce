@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import { Main, Logo, Email, MailWrap, Wrap, Text, Container, Container2, Container3, Container4, Wrap2 } from './styles';
+//import { Main, Logo, Email, MailWrap, Wrap, Text, Container, Container2, Container3, Container4, Wrap2 } from './styles';
+import * as S from './styles';
 import logo from '../../assets/logo.png'
 import FeatherIcon from 'feather-icons-react';
 import { FiFacebook, FiPhoneCall, FiAtSign, FiInstagram, FiTwitter, FiYoutube, FiLinkedin, FiMail, FiMessageSquare } from 'react-icons/fi'
@@ -42,7 +43,7 @@ export function Footer() {
       return emailRequired();
     }
     if (values) {
-      if (ValidateEmail(values) === true) {
+      if (ValidateEmail(values)) {
         InvalidFormat();
       } else {
         localStorage.setItem(key, values);
@@ -54,25 +55,25 @@ export function Footer() {
 
 
   return (
-    <Main>
-      <Container>
-        <Logo src={logo} alt="logo" />
-        <Wrap>
+    <S.Footer>
+      <S.Container>
+        <S.Logo src={logo} alt="logo" />
+        <S.Wrap>
           <FiFacebook className="social-m" />
           <FiInstagram className="social-m" />
           <FiTwitter className="social-m" />
           <FiYoutube className="social-m" />
           <FiLinkedin className="social-m" />
-        </Wrap>
-        <MailWrap>
+        </S.Wrap>
+        <S.MailWrap>
           <FiMail className="mail" />
-        </MailWrap>
-        <Text>
+        </S.MailWrap>
+        <S.Text>
           CADASTRE-SE EM NOSSA NEWSLETTER <br />
           para não perder nossas promoções!
-        </Text>
-        <Wrap2 />
-        <Email
+        </S.Text>
+        <S.Wrap2 />
+        <S.Email
           type="email"
           placeholder="  Digite seu melhor e-mail"
           value={email}
@@ -86,19 +87,19 @@ export function Footer() {
         </button>
         <ToastContainer />
 
-      </Container>
-      <Container2>
-        <FiMessageSquare />
-        <a href="/">Entre em contato</a>
-        <AiOutlineWhatsApp />
-        <a href="/">WhatsApp: (18)99166-4558</a>
-        <FiPhoneCall />
-        <a href="/">Tel:(18)0000-0000</a>
-        <FiAtSign />
-        <a href="/">danilomds2007@gmail.com</a>
-      </Container2>
+      </S.Container>
+      <S.Container2>
+        
+        <a href="/"><FiMessageSquare /> Entre em contato</a>
+        
+        <a href="/"><AiOutlineWhatsApp /> WhatsApp: (18)99166-4558</a>
+        
+        <a href="/"><FiPhoneCall /> Tel:(18)0000-0000</a>
+        
+        <a href="/"><FiAtSign /> danilomds2007@gmail.com</a>
+      </S.Container2>
 
-      <Container3>
+      <S.Container3>
         <a href="/">Sobre nós</a>
         <a href="/">Como comprar</a>
         <a href="/">Envio</a>
@@ -106,12 +107,12 @@ export function Footer() {
         <a href="/">Segurança</a>
         <a href="/">Trocas e devoluções</a>
         <a href="/">Depoimentos de Clientes</a>
-      </Container3>
+      </S.Container3>
 
-      <Container4>
+      <S.Container4>
         <p className="obj">Projeto desenvolvido para o desafio do Hiring Coders 2.</p>
         <p className="des">© 2021 ❤️ Danilo Mendes</p>
-      </Container4>
-    </Main>
+      </S.Container4>
+    </S.Footer>
   )
 }
