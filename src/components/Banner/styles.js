@@ -6,17 +6,13 @@ export const Main = styled.div`
   width: 100%;
   height: 20rem;
   flex-wrap: wrap; 
-  margin: .2rem;
-
 
   @media (max-width: 36rem) {    
     margin-top: 2rem;
     width: 100%; 
     justify-content: flex-start;
     height: 10rem;
-
   }
-  
 `;
 
 export const Content = styled.div`
